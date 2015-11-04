@@ -1,0 +1,5 @@
+FTInteger:EDGEID
+FTInteger:STARTID
+FTInteger:ENDID
+FTDouble:LENGTH
+FTDouble:SPD
