@@ -392,8 +392,8 @@ void importSHP(std::string filename, polylinecollection &coll,
 						)
 {
 	SHPHandle	hSHP;
-	DBFHandle   hDBF;
-    int		nShapeType, i, nEntities, nShpInFile;
+        DBFHandle hDBF;
+    int		nShapeType, i, nEntities;
     SHPObject	*shape;
     
     hSHP = SHPOpen( (filename+std::string(".shp")).c_str(), "rb" );
@@ -405,7 +405,7 @@ void importSHP(std::string filename, polylinecollection &coll,
     if (verbose)
     out << "Importing file with " << nEntities << " entities"<<endl;
     
-    size_t nDBFRecords = DBFGetRecordCount(hDBF );
+    int nDBFRecords = DBFGetRecordCount(hDBF );
     if (verbose)
     out << "Found a DBF with " << nDBFRecords << " entries" << endl;
     
@@ -472,8 +472,8 @@ void importSHPOnlyGeometry(std::string filename, polylinecollection &coll,
 						)
 {
 	SHPHandle	hSHP;
-	DBFHandle   hDBF;
-    int		nShapeType, i, nEntities, nShpInFile;
+
+    int		nShapeType, i, nEntities;
     SHPObject	*shape;
     
     hSHP = SHPOpen( (filename+std::string(".shp")).c_str(), "rb" );
@@ -1322,7 +1322,7 @@ std::string default_stats()
  *         
  * 
  * cleans stat_examines and shortest_path and then calls the appropriate search
- * algorithm in the algorithms/* header.
+ * algorithm in the algorithms/  header.
  * 
  */
 	

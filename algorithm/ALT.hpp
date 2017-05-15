@@ -126,8 +126,9 @@ class landmark_t{
     {
 		// d(v,w) <= d(v)  -d (w) for distance to L
 		double pi = 0;
+		
+#ifndef ALT_USE_TIGHTEST_SUBSET
 		size_t l = landmarks.size();
-#ifndef ALT_USE_TIGHTEST_SUBSET		
 		for (size_t i=0; i < l; i++)
 		
 #else
@@ -157,7 +158,7 @@ class landmark_t{
 		double d = WebMercatorEdge(v,w);
 		std::vector<std::pair<double, size_t>> tightness;
 		
-		double pi;
+		double pi=0;
 		size_t l = landmarks.size();
 		tightness.resize(l);		
 		// Calculate tightness value for each landmark
