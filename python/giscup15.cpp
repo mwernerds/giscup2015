@@ -85,8 +85,8 @@ giscup15_NearestVertex(PyObject *self, PyObject *args)
    if (!PyArg_ParseTuple(args, "dd", &x,&y))
         return NULL;
    
-   auto junction = ds.nearestJunction(x,y);
-   return Py_BuildValue("i",junction);
+   auto vertex = se.nearestVertex(x,y);
+   return Py_BuildValue("i",vertex);
 }
 
 static PyObject *
@@ -95,14 +95,13 @@ giscup15_VertexCoordinates(PyObject *self, PyObject *args)
    int v;
    if (!PyArg_ParseTuple(args, "i", &v))
         return NULL;
-   double x,y;
    if (v < 0 | v >= ds.junctions.size())
    {
       cout << "Invalid vertex" << endl;
       return Py_BuildValue("i",0);
    }
-   x = ds.junctions[v][0][0];
-   y = ds.junctions[v][0][1];
+    double x = se.locations[v].x;
+    double y = se.locations[v].y;
    
    return Py_BuildValue("dd",x,y);
 }

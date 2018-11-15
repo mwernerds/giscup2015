@@ -1,4 +1,5 @@
-from distutils.core import setup, Extension
+from setuptools import setup, Extension
+#from distutils.core import setup, Extension
 
 module1 = Extension('giscup15',
                     sources = ['giscup15.cpp'],
