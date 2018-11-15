@@ -95,10 +95,10 @@ giscup15_VertexCoordinates(PyObject *self, PyObject *args)
    int v;
    if (!PyArg_ParseTuple(args, "i", &v))
         return NULL;
-   if (v < 0 | v >= ds.junctions.size())
+   if (v < 0 | v >= se.locations.size())
    {
-      cout << "Invalid vertex" << endl;
-      return Py_BuildValue("i",0);
+      std::cerr << "bad vertex" << std::endl;
+      return Py_BuildValue("d",1);
    }
     double x = se.locations[v].x;
     double y = se.locations[v].y;
@@ -133,7 +133,7 @@ giscup15_Shortest(PyObject *self, PyObject *args)
      {
 	  double x = se.locations[l].x;
 	  double y = se.locations[l].y;
-	  cout << l <<";" << x << "/" << y << endl;
+//	  cout << l <<";" << x << "/" << y << endl;
 	  PyList_Append(list,PyInt_FromSize_t(l));
 	  
      }
