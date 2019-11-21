@@ -180,7 +180,7 @@ class MyDataEngine :public DataEngine
 		zoompan.setMBR(mbr[0],mbr[1],mbr[2],mbr[3]);
 		zoompan.zoomFit();
 				
-	    wxToolBar *toolbar;
+		/*	    wxToolBar *toolbar;
 		toolbar = getFrame()->GetToolBar(); 
 		toolbar->AddSeparator();
 		toolbar->AddTool(MENU_ZOOMIN,wxT("Zoom In"),wxBitmap((const char *const *) &xpm_viewmagp));
@@ -188,7 +188,7 @@ class MyDataEngine :public DataEngine
 		toolbar->AddTool(MENU_ZOOMFIT,wxT("Zoom Fit"),wxBitmap((const char *const *) &xpm_viewmag1));
 		toolbar->Realize();
 		getFrame()->SetToolBar(toolbar);
-
+		*/
 		view_roads = false;
 		view_graph = true;
 		view_landmark = false;

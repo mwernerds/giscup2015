@@ -7,3 +7,7 @@ This is the source code, slightly cleaned up. It compiles on most systems using 
 
 See the webpage for this project for further information including a video demonstration, a paper, a poster, and more...
 <http://www.martinwerner.de/code/acm-sigspatial-giscup-2015>
+
+# Prerequisites
+
+Install libshp-dev and wx-gtk packages. 
